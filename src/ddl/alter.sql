@@ -1,3 +1,6 @@
+USE ShowBook;
+GO
+
 ALTER TABLE Movies
 ADD CONSTRAINT PK_Movies PRIMARY KEY (MovieID);
 
