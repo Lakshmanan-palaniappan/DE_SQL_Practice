@@ -16,7 +16,7 @@ files = result.stdout.strip().split("\n")
 blocked = False
 
 for file in files:
-    if not file or not file.endswith(".py"):
+    if not file or not file.endswith(".sql"):
         continue
 
     if file.startswith("scripts/hooks/"):
