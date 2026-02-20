@@ -1,0 +1,35 @@
+ALTER TABLE Movies
+ADD CONSTRAINT PK_Movies PRIMARY KEY (MovieID);
+
+ALTER TABLE Customers
+ADD CONSTRAINT PK_Customers PRIMARY KEY (CustomerID),
+    CONSTRAINT UQ_Customers_Email UNIQUE (Email);
+
+ALTER TABLE Shows
+ADD CONSTRAINT PK_Shows PRIMARY KEY (ShowID),
+    CONSTRAINT FK_Shows_Movies FOREIGN KEY (MovieID) REFERENCES Movies(MovieID),
+    CONSTRAINT CK_Shows_Price CHECK (Price >= 0);
+
+ALTER TABLE Bookings
+ADD CONSTRAINT PK_Bookings PRIMARY KEY (BookingID),
+    CONSTRAINT FK_Bookings_Customers FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+    CONSTRAINT FK_Bookings_Shows FOREIGN KEY (ShowID) REFERENCES Shows(ShowID);
+
+ALTER TABLE Customers
+ADD Phone NVARCHAR(20);
+
+
+ALTER TABLE Customers
+ALTER COLUMN FullName NVARCHAR(150);
+
+
+
+ALTER TABLE Customers
+DROP COLUMN Phone;
+
+
+ALTER TABLE Shows
+DROP CONSTRAINT CK_Shows_Price;
+
+ALTER TABLE Shows
+ADD CONSTRAINT CK_Shows_Price CHECK (Price >= 50);
