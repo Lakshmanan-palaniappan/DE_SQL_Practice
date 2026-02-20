@@ -5,13 +5,13 @@ INSERT INTO Movies (Title, DurationMinutes)
 VALUES ('Leo', 148);
 
 INSERT INTO Movies (Title, DurationMinutes)
-VALUES 
+VALUES
 ('GOAT', 169),
 ('JN', 150);
 
 
 INSERT INTO Customers (FullName, Email)
-VALUES 
+VALUES
 ('Cus 1', 'cus1@test.com'),
 ('Cus 2', 'cus2@test.com');
 
