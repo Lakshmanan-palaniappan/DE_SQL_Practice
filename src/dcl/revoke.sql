@@ -1,0 +1,6 @@
+USE ShowBook;
+GO
+
+REVOKE SELECT ON Shows FROM guest
+EXECUTE AS USER='guest'
+SELECT * FROM Shows

@@ -1,0 +1,11 @@
+--CREATE LOGIN guest WITH PASSWORD = 'Guss@123';
+--CREATE USER guest FOR LOGIN guest;
+
+USE ShowBook;
+GO
+GRANT SELECT ON Shows TO guest 
+
+EXECUTE AS USER ='guest'
+SELECT * FROM Shows
+
+UPDATE Shows SET Price=800
