@@ -23,3 +23,5 @@ HAVING COUNT(*) > 1;
 
 SELECT * FROM Movies
 ORDER BY DurationMinutes DESC
+
+SELECT AVG(DurationMinutes) as Average_Runtime FROM Movies
